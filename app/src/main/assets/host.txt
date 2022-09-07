@@ -1,0 +1,16 @@
+127.0.0.1 hulu.hb.omtrdc.net
+127.0.0.1 rtr.innovid.com
+127.0.0.1 bs.serving-sys.com
+127.0.0.1 dpm.demdex.net
+
+#Causes adblock detection (2 minute blackscreen)
+#127.0.0.1 svastx.moatads.com
+
+127.0.0.1 i79zj-tzyj9.ads.tremorhub.com
+127.0.0.1 assetshuluimcom-a.akamaihd.net
+127.0.0.1 ads-e-darwin.hulustream.com/published/
+
+
+
+
+

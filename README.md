@@ -14,5 +14,6 @@ Semi-functional ❗
 
 TV remote navigation needs a lot of work
 
-## Notice
-This app has no affiliation with Hulu, LLC
+## Disclaimer
+Hulu is a trademark of Disney Media and Entertainment Distribution. This application holds no association or affiliation with Hulu, LLC or any third-party companies.
+

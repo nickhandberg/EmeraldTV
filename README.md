@@ -5,14 +5,14 @@ An alternate app to watch the Hulu streaming service for Android/AndroidTV
 EmeraldTV video player automatically speeds up 10x during ad segments essentially fast forwarding through the ads
 
 ## Functionality
-### Android Phone/Tablet
-Functional ✔️
+Android Phone/Tablet: Functional ✔️
 
-Subtitles dont work currently
-### Android TV
-Semi-functional ❗
+Android TV: Semi-functional ❗
 
-TV remote navigation needs a lot of work
+## Known Issues
+Subtitles not working
+
+TV remote navigation needs work
 
 ## Disclaimer
 Hulu is a trademark of Disney Media and Entertainment Distribution. This application holds no association or affiliation with Hulu, LLC or any third-party companies.

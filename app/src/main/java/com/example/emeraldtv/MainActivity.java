@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setDefaultTextEncodingName("utf-8");
 
         webview.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+
         webview.loadUrl("https://www.hulu.com/profiles?next=/");
     }
 
@@ -142,28 +143,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     //TODO REFINE TV REMOTE CONTROLS
-    /*
+
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         int keyCode = event.getKeyCode();
 
         switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_DOWN:
-                if(event.getAction() == KeyEvent.ACTION_DOWN){
-                    Log.i("DETECTED","DPAD_DOWN DETECTED");
-                    injectJS("nav-scripts.js");
-                }
-                break;
             case KeyEvent.KEYCODE_DPAD_UP:
                 if(event.getAction() == KeyEvent.ACTION_DOWN){
-                    Log.i("DETECTED","DPAD_UP DETECTED");
                     injectJS("nav-scripts.js");
                 }
                 break;
-
+            /*
+            case KeyEvent.KEYCODE_P:
+                if(event.getAction() == KeyEvent.ACTION_DOWN){
+                    injectJS("pause.js");
+                }
+            */
         }
         return super.dispatchKeyEvent(event);
-    }*/
+    }
 
 
     @Override

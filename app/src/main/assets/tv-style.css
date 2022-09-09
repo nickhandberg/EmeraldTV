@@ -1,0 +1,68 @@
+*:focus {
+    outline: none;
+}
+
+.NavBar__item:focus{
+    outline: none;
+}
+
+li:focus{
+    outline: none;
+}
+
+a:focus{
+    outline: none;
+}
+
+.NavBar__item--selected:focus{
+    outline: none;
+}
+
+.SliderV2__button:focus{
+    outline: solid;
+    outline-color: #1ee683;
+}
+
+
+.Nav__menu:focus{
+    background-color: #1ee683;
+}
+
+
+.GlobalNavigation__search:focus{
+    background-color: #1ee683;
+}
+
+
+.ViewAllLink__right-arrow:focus{
+    outline: solid;
+    outline-color: #1ee683;
+}
+
+.SimpleSliderCollection{
+    margin-top: 0;
+}
+
+.Button--high-emphasis:focus{
+    border-color: #1ee683;
+}
+.Button--medium-emphasis:focus{
+    border-color: #1ee683;
+}
+
+
+.Button:focus{
+    border-color: #1ee683;
+}
+
+/*USE FOR TV STYLE*/
+.GlobalNavigation{
+    position: static;
+}
+.SimpleModalNav{
+    position: static;
+}
+
+.Nav__link.Button:focus{
+    background: #282c31;
+}

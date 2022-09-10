@@ -29,9 +29,23 @@ removeElementsByClass("ContextMenuButton");
 removeElementsByClass("StandardEmphasisHorizontalTileContent__title-button");
 removeElementsByClass("MediumEmphasisVerticalTile__footer");
 removeElementsByClass('tophat');
+removeElementsByClass("GlobalNavigation__skip-link");
+if(window.location.href == "https://www.hulu.com/my-stuff"){
+    removeElementsByClass("MyStuffBanner");
+    removeElementsByClass("MyStuffTile__toggle");
+}
 // Removes ad tiles
 removeElementsByClass("HighEmphasisTile--promoted-content-ad");
-removeElementsByClass("GlobalNavigation__skip-link");
+
+//Removes footer
+removeElementsByClass("Footer-module-footer-2hIom");
+
+
+
 
 disableSelectionByClass("GlobalNavigation__logo");
+
+//May need to make TV only
+disableSelectionByClass("Tile__title");
+
 replaceWithTextByClass("HighEmphasisTile__title-button");

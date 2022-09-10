@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_DOWN:
             case KeyEvent.KEYCODE_DPAD_UP:
-                if(event.getAction() == KeyEvent.ACTION_DOWN){
+                if(event.getAction() == KeyEvent.ACTION_UP){
                     injectJS("nav-scripts.js");
                 }
                 break;

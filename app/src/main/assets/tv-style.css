@@ -45,15 +45,22 @@ a:focus{
 
 .Button--high-emphasis:focus{
     border-color: #1ee683;
+    /*border:4px solid #1ee683;
+    border-radius:5px;
+    padding: 6px;*/
 }
 .Button--medium-emphasis:focus{
     border-color: #1ee683;
+    /*border:4px solid #1ee683;
+    border-radius:5px;
+    padding: 6px;*/
 }
 
 
-.Button:focus{
+
+/*.Button:focus{
     border-color: #1ee683;
-}
+}*/
 
 /*USE FOR TV STYLE*/
 .GlobalNavigation{
@@ -66,3 +73,90 @@ a:focus{
 .Nav__link.Button:focus{
     background: #282c31;
 }
+
+.button.jsx-512580361:focus{
+    outline: solid;
+    outline-color: #1ee683;
+}
+
+.MyStuffTile__toggle:focus{
+    outline: solid;
+    outline-color: #1ee683;
+}
+
+/* REPLACES HIGHLIGHTING OF THUMBNAIL WITH ON FOCUS */
+.StandardEmphasisHorizontalTileThumbnail:focus{
+    border:4px solid #1ee683;
+    border-radius:16px;
+    padding: 6px;
+}
+
+
+.StandardEmphasisHorizontalTileThumbnail::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -8px;
+    right: -8px;
+    border: none
+    border-radius: 16px;
+    opacity: 0;
+    transition: none;
+}
+
+.StandardEmphasisHorizontalTileThumbnail:hover:before {
+ border: none;
+}
+.StandardEmphasisHorizontalTileThumbnail:active:before {
+ border: none;
+}
+
+.Tile__thumbnail-container:focus-within{
+    border:4px solid #1ee683;
+    border-radius:16px;
+    padding: 6px;
+}
+
+.Tile__thumbnail-container::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -8px;
+    right: -8px;
+    border: none
+    border-radius: 16px;
+    opacity: 0;
+    transition: none;
+}
+
+.Tile__thumbnail-container:hover:before {
+ border: none;
+}
+.Tile__thumbnail-container:active:before {
+ border: none;
+}
+
+/* END */
+
+
+/* TODO PLAY ICON APPEAR WHEN FOCUSED */
+/*
+.StandardEmphasisHorizontalTileThumbnail:focus + .StandardEmphasisHorizontalTileThumbnail__icon{
+    opacity: 1;
+}
+*/
+/* DISABLES PLAY ICON */
+.StandardEmphasisHorizontalTileThumbnail__icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  color: transparent;
+  font-size: 0;
+  box-shadow: 2px 4px 10px 0 var(--shadow--dark);
+  border-radius: 50%;
+}
+
+/*END*/

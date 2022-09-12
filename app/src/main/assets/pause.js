@@ -1,33 +1,14 @@
-let playerDiv2;
+if(document.body.contains(document.querySelector("#content-video-player"))){
+    let videoPlayer = document.getElementById("content-video-player");
+    togglePause(videoPlayer);
+}
 
 
-const observer2 = new MutationObserver(() => {
-  let players2 = playerDiv2.querySelectorAll('video');
-
-
-
-  players2.forEach(pause);
-});
-
-
-function pause (player) {
-  if(player.paused()){
+// TODO Bring up video overlay when paused and hide when playing
+function togglePause (player) {
+  if(player.paused){
     player.play();
   }else{
     player.pause();
   }
 }
-
-
-
-// Attaches observer to web player app
-function attachObserver () {
-  playerDiv2 = document.querySelector('#web-player-app');
-  if (playerDiv2) {
-    observer2.observe(playerDiv2, { attributes: false, childList: true, subtree: true });
-  } else {
-    setTimeout(attachObserver, 1000);
-  }
-}
-
-attachObserver();

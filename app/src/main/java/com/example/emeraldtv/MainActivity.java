@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private WebView webview;
     private String adServers;
     private String deviceStyle = "mobile-style.css";
+    private String deviceScript = "mobile-scripts.js";
     private boolean isTV = false;
 
     @Override
@@ -41,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Activity activity = this;
-        String newUA= "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0";
+        //String newUA= "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0";
+        String newUA= "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0";
 
         // Checks if device is TV and changes style sheet
         UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
         if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
             deviceStyle = "tv-style.css";
+            deviceScript = "tv-scripts.js";
             isTV = true;
         }
 
@@ -75,19 +78,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
-                //injectJS("fastforward.js");
+                injectJS("utils.js");
                 injectJS("onPageFinishedScripts.js");
-                injectJS("onLoadResourceScripts.js");
+                injectJS(deviceScript);
                 injectCSS();
+
 
                 super.onPageFinished(view, url);
             }
 
             @Override
             public void onLoadResource(WebView view, String url){
-                //TODO CHECK PERFORMANCE IMPACT OF INJECTIONS ON VIDEO PLAYBACK
                 injectJS("fastforward.js");
-                injectJS("onLoadResourceScripts.js");
+                injectJS(deviceScript);
                 super.onLoadResource(view, url);
             }
         });
@@ -155,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
                     injectJS("nav-scripts.js");
                 }
                 break;
-            /*
-            case KeyEvent.KEYCODE_P:
-                if(event.getAction() == KeyEvent.ACTION_DOWN){
+
+            case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
+                if(event.getAction() == KeyEvent.ACTION_UP){
                     injectJS("pause.js");
                 }
-            */
+
         }
         return super.dispatchKeyEvent(event);
     }

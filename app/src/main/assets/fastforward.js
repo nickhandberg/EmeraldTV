@@ -1,3 +1,4 @@
+//if(document.body.contains(document.querySelector("#content-video-player"))){}
 const FAST_FORWARD_RATE = 10.0;
 
 let playerDiv;

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.app.UiModeManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.BaseInputConnection;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -35,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
     private String adServers;
     private String deviceStyle = "mobile-style.css";
     private String deviceScript = "mobile-scripts.js";
-    private boolean isTV = false;
+    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Activity activity = this;
+        activity = this;
         //String newUA= "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0";
         String newUA= "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0";
 
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
             deviceStyle = "tv-style.css";
             deviceScript = "tv-scripts.js";
-            isTV = true;
         }
 
         webview=(WebView)findViewById(R.id.webView);
@@ -161,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
             case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
                 if(event.getAction() == KeyEvent.ACTION_UP){
-                    injectJS("pause.js");
+                    simulateKeyPress(KeyEvent.KEYCODE_SPACE);
                 }
 
         }
@@ -245,5 +246,15 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void simulateKeyPress(int key){
+        activity.getWindow().getDecorView().getRootView();
+        BaseInputConnection inputConnection = new BaseInputConnection(activity.getWindow().getDecorView().getRootView(),
+                true);
+        KeyEvent downEvent = new KeyEvent(KeyEvent.ACTION_DOWN, key);
+        KeyEvent upEvent = new KeyEvent(KeyEvent.ACTION_UP, key);
+        inputConnection.sendKeyEvent(downEvent);
+        inputConnection.sendKeyEvent(upEvent);
     }
 }

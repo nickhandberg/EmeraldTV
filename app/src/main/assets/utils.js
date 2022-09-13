@@ -8,7 +8,10 @@ function removeElementsByClass(classname){
 
 function removeSingleElementByClass(classname, pos){
     let elements = document.getElementsByClassName(classname);
-    elements[pos].parentNode.removeChild(elements[pos]);
+    if(elements[pos] != null){
+        elements[pos].parentNode.removeChild(elements[pos]);
+    }
+
 }
 
 function disableSelectionByClass(classname){

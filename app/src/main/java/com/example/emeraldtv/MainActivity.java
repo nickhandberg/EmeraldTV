@@ -80,17 +80,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 injectJS("utils.js");
+                injectJS("fastforward.js");
                 injectJS("onPageFinishedScripts.js");
                 injectJS(deviceScript);
                 injectCSS();
-
-
                 super.onPageFinished(view, url);
             }
 
             @Override
             public void onLoadResource(WebView view, String url){
-                injectJS("fastforward.js");
                 injectJS(deviceScript);
                 super.onLoadResource(view, url);
             }

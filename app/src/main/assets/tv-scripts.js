@@ -14,6 +14,15 @@ removeElementsByClass("HighEmphasisTile--promoted-content-ad");
 //Remove playback control buttons
 removeElementsByClass("PlaybackControls");
 
+//Remove playback settings button
+removeElementsByClass("controls__setting-button");
+
+//Removes up-next text during video playback
+removeSingleElementByClass("PlayerMetadata__hitRegion",1);
+
+//removes expand icon on currently playing text
+removeElementsByClass("SvgIcon");
+
 //Remove view mode control buttons
 removeElementsByClass("ViewModeControlBar");
 
@@ -22,6 +31,12 @@ removeElementsByClass("Footer-module-footer-2hIom");
 
 //remove Ad sections on timeline bar
 removeElementsByClass("TimelineAdBreaks");
+
+//removes up next button during video playback
+removeElementsByClass("UpNextButton");
+
+//removes ads during pauses
+removeElementsByClass("PauseAdAsset");
 
 // Disables logo button selection
 disableSelectionByClass("GlobalNavigation__logo");

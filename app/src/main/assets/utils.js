@@ -6,6 +6,11 @@ function removeElementsByClass(classname){
     }
 }
 
+function removeSingleElementByClass(classname, pos){
+    let elements = document.getElementsByClassName(classname);
+    elements[pos].parentNode.removeChild(elements[pos]);
+}
+
 function disableSelectionByClass(classname){
     let elements = document.getElementsByClassName(classname);
     for(let i=0; i<elements.length; i++){
